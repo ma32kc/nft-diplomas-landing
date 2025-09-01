@@ -1,0 +1,498 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Пилотный проект — Электронные сертификаты</title>
+  <meta name="description" content="Пилот электронных сертификатов с QR-проверкой. Бесплатно для первой школы.">
+  <meta property="og:title" content="Пилот электронных сертификатов для школы">
+  <meta property="og:description" content="Цифровые дипломы с QR. Быстро, безопасно, удобно.">
+  <meta property="og:type" content="website">
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"Product",
+    "name":"Электронные сертификаты для школ",
+    "description":"Цифровые дипломы с QR-проверкой подлинности",
+    "brand":{"@type":"Brand","name":"NFT Diplomas"},
+    "offers":{
+      "@type":"Offer",
+      "price":"0",
+      "priceCurrency":"RUB",
+      "category":"pilot",
+      "availability":"https://schema.org/InStock"
+    }
+  }
+  </script>
+  <!-- Tailwind CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    /* Небольшие доработки */
+    .read-progress { transition: width .15s linear; }
+  </style>
+</head>
+<body class="bg-white text-gray-900">
+
+  <!-- Progress -->
+  <div id="readProgress" aria-hidden="true" class="read-progress fixed top-0 left-0 h-1 w-0 bg-indigo-600 z-40"></div>
+
+  <!-- HERO -->
+  <section class="relative isolate overflow-hidden bg-gradient-to-tr from-indigo-700 via-indigo-600 to-indigo-500 text-white">
+    <div class="pointer-events-none absolute -top-20 -right-24 size-[520px] rounded-full bg-white/10 blur-3xl"></div>
+    <div class="pointer-events-none absolute -bottom-28 -left-16 size-[460px] rounded-full bg-black/10 blur-3xl"></div>
+    <div class="pointer-events-none absolute inset-0 bg-[radial-gradient(80%_50%_at_50%_0%,rgba(255,255,255,0.12),transparent_70%)]"></div>
+
+    <div class="relative z-10 max-w-6xl mx-auto px-6 pt-24 pb-20 text-center">
+      <div class="inline-flex items-center gap-2 rounded-full bg-white/10 px-4 py-1.5 ring-1 ring-white/20 backdrop-blur">
+        <span class="size-2 rounded-full bg-emerald-400"></span>
+        <span class="text-sm">Пилот бесплатно только для первой школы</span>
+      </div>
+
+      <h1 class="mt-6 text-5xl md:text-6xl font-extrabold leading-tight tracking-tight">
+        Электронные сертификаты для вашей школы
+      </h1>
+      <p class="mt-4 text-lg/8 opacity-90 max-w-3xl mx-auto">
+        Цифровые дипломы с QR-проверкой подлинности. Быстро, безопасно, удобно.
+      </p>
+
+      <div class="mt-10 flex flex-col sm:flex-row gap-4 justify-center">
+        <a href="mailto:ma32kc@gmail.com"
+           class="px-6 py-3 inline-flex items-center justify-center gap-2 rounded-xl bg-white font-semibold text-indigo-700 shadow-lg hover:bg-gray-100 transition">
+          Подключить пилот
+          <svg class="size-5" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+            <path d="M5 12h12.586l-4.293-4.293 1.414-1.414L21.414 12l-6.707 6.707-1.414-1.414L17.586 13H5z"/>
+          </svg>
+        </a>
+        <a href="#process"
+           class="px-6 py-3 inline-flex items-center justify-center gap-2 rounded-xl border border-white/40 font-semibold text-white hover:bg-white hover:text-indigo-700 transition">
+          Как проходит пилот
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <main id="main">
+    <!-- ПОЧЕМУ И ЧТО МЕНЯЕМ -->
+    <section class="bg-white py-20">
+      <div class="max-w-6xl mx-auto px-6 grid lg:grid-cols-2 gap-12 items-start">
+        <div>
+          <h2 class="text-3xl font-bold text-gray-900">Почему это важно</h2>
+          <ul class="mt-6 space-y-4 text-gray-700 text-lg">
+            <li class="flex gap-3"><span class="mt-1.5 size-2 rounded-full bg-indigo-600"></span>Бумажные дипломы теряются и портятся; нужны архив и затраты.</li>
+            <li class="flex gap-3"><span class="mt-1.5 size-2 rounded-full bg-indigo-600"></span>Проверка подлинности занимает время. Родителям и вузам неудобно.</li>
+            <li class="flex gap-3"><span class="mt-1.5 size-2 rounded-full bg-indigo-600"></span>Нет быстрой централизованной переиздачи документов.</li>
+          </ul>
+        </div>
+        <div>
+          <h3 class="text-3xl font-bold text-gray-900">Что предлагается</h3>
+          <div class="mt-6 rounded-2xl border border-gray-200 p-6 shadow-sm">
+            <p class="text-gray-700">
+              Электронные сертификаты с уникальной ссылкой и QR. Проверка онлайн на верификационной странице. PDF доступен для печати и архива.
+            </p>
+            <ul class="mt-4 space-y-2 text-gray-700">
+              <li>Выпуск ≤ 1 мин на документ.</li>
+              <li>QR ведёт на страницу проверки с реквизитами.</li>
+              <li>Пилот бесплатно для первой школы.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ПРЕИМУЩЕСТВА -->
+    <section class="relative bg-gradient-to-b from-gray-50 to-white py-20">
+      <div class="pointer-events-none absolute inset-x-0 -top-10 mx-auto h-40 max-w-6xl rounded-3xl bg-indigo-600/10 blur-2xl"></div>
+      <div class="max-w-6xl mx-auto px-6 relative">
+        <h2 class="text-3xl font-bold text-gray-900 text-center">Преимущества для школы</h2>
+        <div class="mt-12 grid md:grid-cols-3 gap-6">
+          <div class="rounded-2xl bg-white/70 p-6 ring-1 ring-gray-200 backdrop-blur hover:shadow-xl transition">
+            <div class="text-4xl">🚀</div>
+            <h3 class="mt-3 font-semibold text-lg text-gray-900">Современный имидж</h3>
+            <p class="mt-2 text-gray-600">Школа демонстрирует цифровую зрелость.</p>
+          </div>
+          <div class="rounded-2xl bg-white/70 p-6 ring-1 ring-gray-200 backdrop-blur hover:shadow-xl transition">
+            <div class="text-4xl">🔒</div>
+            <h3 class="mt-3 font-semibold text-lg text-gray-900">Защита от подделок</h3>
+            <p class="mt-2 text-gray-600">QR ведёт на страницу верификации.</p>
+          </div>
+          <div class="rounded-2xl bg-white/70 p-6 ring-1 ring-gray-200 backdrop-blur hover:shadow-xl transition">
+            <div class="text-4xl">📱</div>
+            <h3 class="mt-3 font-semibold text-lg text-gray-900">Удобство</h3>
+            <p class="mt-2 text-gray-600">Документ всегда под рукой у семьи.</p>
+          </div>
+          <div class="rounded-2xl bg-white/70 p-6 ring-1 ring-gray-200 backdrop-blur hover:shadow-xl transition">
+            <div class="text-4xl">💰</div>
+            <h3 class="mt-3 font-semibold text-lg text-gray-900">Экономия</h3>
+            <p class="mt-2 text-gray-600">Меньше затрат на печать и хранение.</p>
+          </div>
+          <div class="rounded-2xl bg-white/70 p-6 ring-1 ring-gray-200 backdrop-blur hover:shadow-xl transition">
+            <div class="text-4xl">⚡</div>
+            <h3 class="mt-3 font-semibold text-lg text-gray-900">Скорость</h3>
+            <p class="mt-2 text-gray-600">Выпуск в день события.</p>
+          </div>
+          <div class="rounded-2xl bg-white/70 p-6 ring-1 ring-gray-200 backdrop-blur hover:shadow-xl transition">
+            <div class="text-4xl">🌍</div>
+            <h3 class="mt-3 font-semibold text-lg text-gray-900">Экология</h3>
+            <p class="mt-2 text-gray-600">Меньше бумаги, проще логистика.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- KPI -->
+    <section class="bg-white py-16">
+      <div class="max-w-6xl mx-auto px-6 grid sm:grid-cols-3 gap-6 text-center">
+        <div class="rounded-2xl border border-gray-200 p-6">
+          <div class="text-4xl font-extrabold text-gray-900">≤ 1 мин</div>
+          <div class="mt-1 text-gray-600">выпуск сертификата</div>
+        </div>
+        <div class="rounded-2xl border border-gray-200 p-6">
+          <div class="text-4xl font-extrabold text-gray-900">100%</div>
+          <div class="mt-1 text-gray-600">доступность для родителей</div>
+        </div>
+        <div class="rounded-2xl border border-gray-200 p-6">
+          <div class="text-4xl font-extrabold text-gray-900">1 школа</div>
+          <div class="mt-1 text-gray-600">пилот бесплатно</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ЦЕНА / ТАРИФЫ + КАЛЬКУЛЯТОР -->
+    <section class="bg-white py-20" id="pricing">
+      <div class="max-w-6xl mx-auto px-6">
+        <h2 class="text-3xl font-bold text-gray-900 text-center">Стоимость и тарифы</h2>
+        <p class="mt-2 text-center text-sm text-gray-500">Пилот — бесплатно для первой школы. Ниже — тарифы после пилота.</p>
+
+        <div class="mt-10 grid md:grid-cols-4 gap-6">
+          <!-- Пилот -->
+          <div class="rounded-2xl border border-emerald-200 bg-emerald-50 p-6">
+            <div class="text-sm font-semibold text-emerald-700">Пилот</div>
+            <div class="mt-2 text-4xl font-extrabold text-gray-900">0 ₽</div>
+            <div class="text-sm text-gray-600">для первой школы</div>
+            <ul class="mt-4 space-y-2 text-gray-700 text-sm">
+              <li>До 200 выпусков</li>
+              <li>QR-проверка и хостинг</li>
+              <li>PDF-версия включена</li>
+            </ul>
+          </div>
+
+          <!-- Starter -->
+          <div class="rounded-2xl border border-indigo-200 bg-white p-6 shadow-sm">
+            <div class="text-sm font-semibold text-indigo-700">Starter</div>
+            <div class="mt-2 flex items-baseline gap-1">
+              <span class="text-4xl font-extrabold text-gray-900">9 900 ₽</span>
+              <span class="text-sm text-gray-600">/ мес</span>
+            </div>
+            <div class="mt-1 text-sm text-gray-600">100 выпусков включено</div>
+            <div class="text-sm text-gray-500">Сверхлимит: 150 ₽/шт</div>
+            <ul class="mt-4 space-y-2 text-gray-700 text-sm">
+              <li>Верификация по QR</li>
+              <li>Хранение 3 года</li>
+              <li>Типовой PDF-шаблон</li>
+            </ul>
+          </div>
+
+          <!-- Pro -->
+          <div class="rounded-2xl border border-indigo-200 bg-white p-6 shadow-sm ring-1 ring-indigo-100">
+            <div class="flex items-center justify-between">
+              <div class="text-sm font-semibold text-indigo-700">Pro</div>
+              <span class="text-xs px-2 py-0.5 rounded-full bg-indigo-50 text-indigo-700">рекомендуем</span>
+            </div>
+            <div class="mt-2 flex items-baseline gap-1">
+              <span class="text-4xl font-extrabold text-gray-900">24 900 ₽</span>
+              <span class="text-sm text-gray-600">/ мес</span>
+            </div>
+            <div class="mt-1 text-sm text-gray-600">500 выпусков включено</div>
+            <div class="text-sm text-gray-500">Сверхлимит: 90 ₽/шт</div>
+            <ul class="mt-4 space-y-2 text-gray-700 text-sm">
+              <li>Свой домен верификации</li>
+              <li>API и вебхуки</li>
+              <li>Бренд-страница проверки</li>
+            </ul>
+          </div>
+
+          <!-- Enterprise -->
+          <div class="rounded-2xl border border-gray-200 bg-white p-6">
+            <div class="text-sm font-semibold text-gray-900">Enterprise</div>
+            <div class="mt-2 flex items-baseline gap-1">
+              <span class="text-4xl font-extrabold text-gray-900">59 000 ₽</span>
+              <span class="text-sm text-gray-600">/ мес</span>
+            </div>
+            <div class="mt-1 text-sm text-gray-600">2 000 выпусков включено</div>
+            <div class="text-sm text-gray-500">Сверхлимит: 50 ₽/шт</div>
+            <ul class="mt-4 space-y-2 text-gray-700 text-sm">
+              <li>SSO/SAML</li>
+              <li>Интеграции под ключ</li>
+              <li>Приоритетная поддержка 24×7</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Разовый платеж -->
+        <div class="mt-8 rounded-2xl bg-indigo-50 p-4 text-center text-sm text-indigo-900 ring-1 ring-indigo-200">
+          <span class="font-medium">Единовременное подключение:</span>
+          <span class="ml-2">Starter — <b>25 000 ₽</b>; Pro — <b>75 000 ₽</b>; Enterprise — <b>250 000 ₽</b></span>
+          <span class="block mt-1 text-xs text-indigo-800/80">Оплачивается один раз при старте. Тариф сети — отдельно.</span>
+        </div>
+
+        <!-- Калькулятор -->
+        <div class="mt-10 grid md:grid-cols-2 gap-6">
+          <div class="rounded-2xl bg-gray-50 p-6 ring-1 ring-gray-200">
+            <label for="calcN" class="block text-sm text-gray-600">Выпусков в месяц</label>
+            <input id="calcN" type="number" min="1" value="200"
+                   class="mt-1 w-full rounded-lg border-gray-300 focus:ring-indigo-600 focus:border-indigo-600">
+            <div class="mt-4 grid grid-cols-3 gap-3 text-sm" id="calcCards"></div>
+          </div>
+
+          <div class="rounded-2xl bg-white p-6 ring-1 ring-gray-200 flex items-center justify-center">
+            <div class="text-center">
+              <div class="text-sm text-gray-600">Рекомендуемый тариф</div>
+              <div id="bestName" class="mt-1 text-2xl font-bold text-gray-900">—</div>
+              <div id="bestTotal" class="mt-2 text-5xl font-extrabold text-gray-900">—</div>
+              <div class="mt-2 text-xs text-gray-500">
+                ≈ <span id="bestEff">—</span> ₽ за сертификат при <span id="bestN">—</span> шт.
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <p class="mt-6 text-center text-xs text-gray-500">
+          Газ сети оплачивается отдельно. Подключение: Starter 25 000 ₽ · Pro 75 000 ₽ · Enterprise 250 000 ₽.
+          Хранение метаданных 3 года включено, далее 5 ₽/сертификат/год.
+        </p>
+      </div>
+    </section>
+
+    <!-- ЭТАПЫ -->
+    <section id="process" class="bg-gray-50 py-20">
+      <div class="max-w-6xl mx-auto px-6">
+        <h2 class="text-3xl font-bold text-gray-900 text-center">Как проходит пилот</h2>
+        <div class="mt-12 relative">
+          <div class="hidden md:block absolute left-1/2 top-0 h-full w-1 -translate-x-1/2 bg-gradient-to-b from-indigo-200 via-indigo-300 to-indigo-200 pointer-events-none"></div>
+          <div class="space-y-10">
+            <div class="md:grid md:grid-cols-2 md:items-center md:gap-12">
+              <div class="mb-4 md:mb-0">
+                <div class="flex md:justify-end">
+                  <div class="inline-flex items-center gap-3 rounded-full bg-white px-4 py-2 ring-1 ring-indigo-200 shadow-sm">
+                    <span class="inline-flex size-8 items-center justify-center rounded-full bg-indigo-600 text-white font-bold">1</span>
+                    <span class="font-semibold text-gray-900">Подключение (1 неделя)</span>
+                  </div>
+                </div>
+              </div>
+              <div><p class="text-gray-700">Доступ + короткое обучение ответственного.</p></div>
+            </div>
+
+            <div class="md:grid md:grid-cols-2 md:items-center md:gap-12">
+              <div class="mb-4 md:mb-0 md:order-2">
+                <div class="flex md:justify-start">
+                  <div class="inline-flex items-center gap-3 rounded-full bg-white px-4 py-2 ring-1 ring-indigo-200 shadow-sm">
+                    <span class="inline-flex size-8 items-center justify-center rounded-full bg-indigo-600 text-white font-bold">2</span>
+                    <span class="font-semibold text-gray-900">Выпуск первых сертификатов</span>
+                  </div>
+                </div>
+              </div>
+              <div class="md:order-1"><p class="text-gray-700">Выбираем событие, выпускаем пакет документов.</p></div>
+            </div>
+
+            <div class="md:grid md:grid-cols-2 md:items-center md:gap-12">
+              <div class="mb-4 md:mb-0">
+                <div class="flex md:justify-end">
+                  <div class="inline-flex items-center gap-3 rounded-full bg-white px-4 py-2 ring-1 ring-indigo-200 shadow-sm">
+                    <span class="inline-flex size-8 items-center justify-center rounded-full bg-indigo-600 text-white font-bold">3</span>
+                    <span class="font-semibold text-gray-900">Обратная связь (1–2 недели)</span>
+                  </div>
+                </div>
+              </div>
+              <div><p class="text-gray-700">Собираем отзывы учеников, родителей, педагогов.</p></div>
+            </div>
+
+            <div class="md:grid md:grid-cols-2 md:items-center md:gap-12">
+              <div class="mb-4 md:mb-0 md:order-2">
+                <div class="flex md:justify-start">
+                  <div class="inline-flex items-center gap-3 rounded-full bg-white px-4 py-2 ring-1 ring-indigo-200 shadow-sm">
+                    <span class="inline-flex size-8 items-center justify-center rounded-full bg-indigo-600 text-white font-bold">4</span>
+                    <span class="font-semibold text-gray-900">Итоги и план внедрения</span>
+                  </div>
+                </div>
+              </div>
+              <div class="md:order-1"><p class="text-gray-700">Итоговый отчёт и рекомендации.</p></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ОБЯЗАННОСТИ -->
+    <section class="bg-white py-20">
+      <div class="max-w-6xl mx-auto px-6">
+        <h2 class="text-3xl font-bold text-gray-900 text-center">Распределение задач</h2>
+        <div class="mt-10 grid md:grid-cols-2 gap-6">
+          <div class="rounded-2xl border border-gray-200 p-6">
+            <div class="inline-flex items-center gap-2 rounded-full bg-indigo-50 px-3 py-1 text-indigo-700 text-sm">Школа</div>
+            <ul class="mt-4 space-y-3 text-gray-700">
+              <li>Назначить ответственного сотрудника.</li>
+              <li>Передать список учеников/мероприятий.</li>
+              <li>Собрать короткую обратную связь.</li>
+            </ul>
+          </div>
+          <div class="rounded-2xl border border-gray-200 p-6">
+            <div class="inline-flex items-center gap-2 rounded-full bg-emerald-50 px-3 py-1 text-emerald-700 text-sm">Мы</div>
+            <ul class="mt-4 space-y-3 text-gray-700">
+              <li>Настраиваем систему и шаблоны дипломов.</li>
+              <li>Выпускаем и отгружаем цифровые документы.</li>
+              <li>Гарантируем проверку по QR и поддержку.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="bg-gray-50 py-20">
+      <div class="max-w-4xl mx-auto px-6">
+        <h2 class="text-3xl font-bold text-gray-900 text-center">FAQ</h2>
+        <div class="mt-10 divide-y divide-gray-200 rounded-2xl border border-gray-200 bg-white">
+          <details class="group p-6">
+            <summary class="flex cursor-pointer list-none items-center justify-between">
+              <span class="font-medium text-gray-900">Это законно?</span>
+              <svg class="size-5 text-gray-500 transition group-open:rotate-180" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M7 10l5 5 5-5z"/></svg>
+            </summary>
+            <p class="mt-3 text-gray-700">Электронные сертификаты дополняют бумажные и содержат проверяемый QR/ссылку.</p>
+          </details>
+          <details class="group p-6">
+            <summary class="flex cursor-pointer list-none items-center justify-between">
+              <span class="font-medium text-gray-900">Сколько стоит пилот?</span>
+              <svg class="size-5 text-gray-500 transition group-open:rotate-180" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M7 10l5 5 5-5z"/></svg>
+            </summary>
+            <p class="mt-3 text-gray-700">Для первой школы — 0 ₽. Мы готовим и выпускаем первую партию.</p>
+          </details>
+          <details class="group p-6">
+            <summary class="flex cursor-pointer list-none items-center justify-between">
+              <span class="font-medium text-gray-900">Как проверять подлинность?</span>
+              <svg class="size-5 text-gray-500 transition group-open:rotate-180" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M7 10l5 5 5-5z"/></svg>
+            </summary>
+            <p class="mt-3 text-gray-700">QR ведёт на страницу верификации с реквизитами документа.</p>
+          </details>
+          <details class="group p-6">
+            <summary class="flex cursor-pointer list-none items-center justify-between">
+              <span class="font-medium text-gray-900">Нужен ли спецсофт?</span>
+              <svg class="size-5 text-gray-500 transition group-open:rotate-180" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M7 10l5 5 5-5z"/></svg>
+            </summary>
+            <p class="mt-3 text-gray-700">Нет. Достаточно браузера. PDF остаётся для печати.</p>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="bg-gradient-to-tr from-indigo-700 via-indigo-600 to-indigo-500 text-white py-20 text-center">
+      <h2 class="text-4xl font-bold">Готовы подключить вашу школу?</h2>
+      <p class="mt-3 text-lg opacity-90">Доступен 1 слот пилота.</p>
+      <a href="mailto:ma32kc@gmail.com"
+         class="mt-8 inline-flex items-center justify-center gap-2 rounded-xl bg-white px-8 py-4 font-semibold text-indigo-700 shadow-lg hover:bg-gray-100 transition">
+        Связаться
+        <svg class="size-5" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+          <path d="M5 12h12.586l-4.293-4.293 1.414-1.414L21.414 12l-6.707 6.707-1.414-1.414L17.586 13H5z"/>
+        </svg>
+      </a>
+    </section>
+  </main>
+
+  <!-- FAB -->
+  <a href="mailto:ma32kc@gmail.com" aria-label="Связаться"
+     class="fixed bottom-5 right-5 z-50 inline-flex items-center justify-center rounded-full bg-indigo-600 text-white shadow-lg size-14 hover:bg-indigo-700 focus:outline-none focus:ring-4 focus:ring-indigo-300 transition">
+    <svg class="size-7" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+      <path d="M4 4h16a2 2 0 012 2v1l-10 6L2 7V6a2 2 0 012-2zm0 5.236l8 4.8 8-4.8V18a2 2 0 01-2 2H6a2 2 0 01-2-2V9.236z"/>
+    </svg>
+  </a>
+
+  <!-- Sticky CTA -->
+  <div id="ctaBar" class="pointer-events-none fixed inset-x-0 bottom-4 z-40 hidden justify-center">
+    <div class="pointer-events-auto flex items-center gap-4 rounded-2xl bg-white/90 px-4 py-3 shadow-2xl ring-1 ring-gray-200 backdrop-blur">
+      <span class="text-sm text-gray-800">Доступен 1 слот пилота</span>
+      <a href="mailto:ma32kc@gmail.com"
+         class="inline-flex items-center justify-center rounded-lg bg-indigo-600 px-4 py-2 text-white text-sm font-semibold hover:bg-indigo-700 transition">Подключить</a>
+    </div>
+  </div>
+
+  <script>
+    // Прогресс чтения
+    (() => {
+      const bar = document.getElementById('readProgress');
+      const doc = document.documentElement;
+      const onScroll = () => {
+        const h = doc.scrollHeight - doc.clientHeight;
+        const p = h > 0 ? (doc.scrollTop / h) * 100 : 0;
+        bar.style.width = p + '%';
+      };
+      document.addEventListener('scroll', onScroll, { passive: true });
+      onScroll();
+    })();
+
+    // Появление нижней плашки
+    (() => {
+      const bar = document.getElementById('ctaBar');
+      let shown = false;
+      const onScroll = () => {
+        const y = window.scrollY || document.documentElement.scrollTop;
+        if (!shown && y > 600) {
+          bar.classList.remove('hidden'); bar.classList.add('flex'); shown = true;
+        } else if (shown && y < 400) {
+          bar.classList.add('hidden'); bar.classList.remove('flex'); shown = false;
+        }
+      };
+      document.addEventListener('scroll', onScroll, { passive: true });
+    })();
+
+    // Калькулятор тарифов
+    (() => {
+      const plans = [
+        { name: 'Starter', m: 9900, incl: 100, over: 150 },
+        { name: 'Pro',     m: 24900, incl: 500, over: 90  },
+        { name: 'Enterprise', m: 59000, incl: 2000, over: 50 },
+      ];
+      const fmt = v => new Intl.NumberFormat('ru-RU').format(v);
+      const total = (n, p) => p.m + Math.max(0, n - p.incl) * p.over;
+      const eff = (n, t) => n > 0 ? Math.ceil(t / n) : 0;
+
+      const input = document.getElementById('calcN');
+      const cards = document.getElementById('calcCards');
+      const bestName = document.getElementById('bestName');
+      const bestTotal = document.getElementById('bestTotal');
+      const bestEff = document.getElementById('bestEff');
+      const bestN = document.getElementById('bestN');
+
+      // Создаём карточки
+      plans.forEach((p, i) => {
+        const div = document.createElement('div');
+        div.className = 'rounded-xl bg-white p-3 ring-1 ring-gray-200';
+        div.innerHTML = `
+          <div class="font-medium text-gray-900">${p.name}</div>
+          <div class="mt-1 text-gray-600"><span data-t="t${i}"></span> ₽/мес</div>
+          <div class="text-xs text-gray-500">≈ <span data-e="e${i}"></span> ₽/шт</div>
+        `;
+        cards.appendChild(div);
+      });
+
+      const update = () => {
+        const n = Math.max(1, parseInt(input.value || '1', 10));
+        let bi = 0, bt = total(n, plans[0]);
+        plans.forEach((p, i) => {
+          const t = total(n, p);
+          const per = eff(n, t);
+          cards.querySelector(`[data-t="t${i}"]`).textContent = fmt(t);
+          cards.querySelector(`[data-e="e${i}"]`).textContent = fmt(per);
+          if (t < bt) { bt = t; bi = i; }
+        });
+        bestName.textContent = plans[bi].name;
+        bestTotal.textContent = `${fmt(bt)} ₽/мес`;
+        bestEff.textContent = fmt(eff(n, bt));
+        bestN.textContent = fmt(n);
+      };
+
+      input.addEventListener('input', update);
+      update();
+    })();
+  </script>
+</body>
+</html>
